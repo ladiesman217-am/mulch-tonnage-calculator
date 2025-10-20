@@ -121,4 +121,3 @@ st.markdown("<hr style='border:2px solid #D4AF37;'>", unsafe_allow_html=True)
 # --- Footer Credits ---
 st.markdown("<p style='color:#000;text-align:center;'>© 2025 Valley Slope Protection Design — V.S.P.D. Estimating Tools</p>", unsafe_allow_html=True)
 
-st.markdown("<p style='color:#000;text-align:center;'>© 2025 Valley Slope Protection Design — V.S.P.D. Estimating Tools</p>", unsafe_allow_html=True)
