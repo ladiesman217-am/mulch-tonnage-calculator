@@ -7,7 +7,7 @@ st.set_page_config(page_title="VSPD Material Converter", page_icon="🪨", layou
 # Load logo
 def load_logo():
     try:
-        return Image.open("FullLogo_Transparent (1).png")
+        return Image.open("vspd_logo.png")
     except Exception:
         return None
 
@@ -46,6 +46,7 @@ size_multipliers = {
 }
 
 type_multipliers = {
+    'N/A': 1.00,
     'Screened': 1.00,
     'Minus': 1.05,
     'Compacted': 1.15,
@@ -56,9 +57,15 @@ type_multipliers = {
 st.subheader("Select Material and Settings")
 material = st.selectbox("Material Type", list(material_densities.keys()))
 
+# Determine whether to show processing dropdown
+if material in ["Mulch", "Rip Rap", "Boulders"]:
+    process_type = "N/A"
+    st.info("Processing type not applicable for this material.")
+else:
+    process_type = st.selectbox("Processing Type", list(type_multipliers.keys()))
+
 if material != 'Boulders':
     size = st.selectbox("Material Size", list(size_multipliers.keys()))
-    process_type = st.selectbox("Processing Type", list(type_multipliers.keys()))
     depth_in = st.slider("Depth (inches)", 1.0, 12.0, 3.0, 0.5)
 
 conversion_dir = st.radio("Conversion Mode", ["Square Footage ➜ Tons", "Tons ➜ Square Footage"])
