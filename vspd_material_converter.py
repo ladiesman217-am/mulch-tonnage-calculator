@@ -17,7 +17,7 @@ logo = load_logo()
 col1, col2 = st.columns([1, 3])
 with col1:
     if logo:
-        st.image(logo, use_container_width=True)
+        st.image(logo, width=220)  # Larger header logo
 with col2:
     st.markdown("""<h1 style='color:#D4AF37;'>V.S.P.D. Material Converter</h1>
     <h4 style='color:#000;'>Valley Slope Protection Design — Material Estimating Tools</h4>""", unsafe_allow_html=True)
@@ -118,8 +118,7 @@ else:
 
 st.markdown("<hr style='border:2px solid #D4AF37;'>", unsafe_allow_html=True)
 
-# --- Footer Logo and Credits ---
-if logo:
-    st.image(logo, width=200)
+# --- Footer Credits ---
+st.markdown("<p style='color:#000;text-align:center;'>© 2025 Valley Slope Protection Design — V.S.P.D. Estimating Tools</p>", unsafe_allow_html=True)
 
 st.markdown("<p style='color:#000;text-align:center;'>© 2025 Valley Slope Protection Design — V.S.P.D. Estimating Tools</p>", unsafe_allow_html=True)
